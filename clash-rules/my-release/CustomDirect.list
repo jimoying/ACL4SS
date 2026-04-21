@@ -1,0 +1,27 @@
+
+# 原理: IP条目不解析,字符串条目直接匹配
+# ================================================================================================================================================================
+# 格式: 去掉"type类型", type类型由-外部配置来定义	**************************************************************************************************************
+# eg: IP-CIDR,10.0.8.2/24,[DIRECT],no-resolve ==转为==> IP-CIDR,10.0.8.2/24,no-resolve
+# eg: DOMAIN-KEYWORD,sakura,[DIRECT|REJECT] ==转为==> DOMAIN-KEYWORD,sakura
+# eg: DOMAIN-KEYWORD,alipay,[DIRECT|REJECT] ==转为==> DOMAIN-KEYWORD,alipay
+# eg: DOMAIN,www.asusrouter.com,[DIRECT|REJECT] ==转为==> DOMAIN,www.asusrouter.com
+# eg: DOMAIN-SUFFIX,4399.com,[DIRECT|REJECT] ==转为==> DOMAIN-SUFFIX,4399.com
+
+# 直连列表
+
+# MyList
+
+# ============================================= 测试1
+DOMAIN-SUFFIX,4399.com
+
+# ============================================= 测试2
+DOMAIN-KEYWORD,GithubTest
+DOMAIN,GithubTest2
+
+# ============================================= 测试3
+DOMAIN-KEYWORD,GithubTest3,no-resolve
+# 支持,固定位置插入/固定第3列插入!!!!!
+# 测试结果: DOMAIN-KEYWORD,GithubTest3,🚀 github,no-resolve
+
+

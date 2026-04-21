@@ -1,0 +1,10 @@
+# 无语法参考!!!!!
+
+##  ## 测试失败
+##  rules:
+##  #### 自定义.Start
+##    - DOMAIN-KEYWORD,sakura,DIRECT
+
+## 测试失败
+#ruleset=🚀 节点选择,[]DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+#ruleset=🚀 节点选择,[]DOMAIN-SUFFIX,services.googleapis.cn

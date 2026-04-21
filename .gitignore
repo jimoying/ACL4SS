@@ -1,0 +1,25 @@
+.settings/
+.gradle/
+.idea/
+target/
+build/
+*-LargeDirectory/
+LargeDirectory/
+*.log
+*.iml
+*.classpath
+*.project
+*.class
+#*.largefile
+#*.large_file
+*largefile*
+
+# ==============================================
+# 在.gitignore文件中定义规则时，需要注意以下几点：
+# 规则是以行为单位的，每行指定一个规则。
+# 可以使用*通配符来匹配任意字符。
+# 可以使用/来指定要忽略的文件夹或目录。
+# 可以使用!来否定前面的规则。
+# 可以使用#来添加注释。
+# "\#.git" 忽略#.git文件提交
+# "\.git" 无法忽略.git文件提交,默认不提交.git,所以这行加不加效果都一样的
