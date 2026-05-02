@@ -11,6 +11,15 @@
 # 直连列表
 
 # MyList
+IP-CIDR,10.0.8.2/24,no-resolve
+IP-CIDR,43.156.38.195/24,no-resolve
+IP-CIDR,139.199.199.40/24,no-resolve
+IP-CIDR,223.5.5.5/8,no-resolve
+IP-CIDR,223.6.6.6/8,no-resolve
+IP-CIDR,8.8.8.8/8,no-resolve
+IP-CIDR,1.1.1.1/8,no-resolve
+IP-CIDR,114.114.114.114/8,no-resolve
+
 DOMAIN-KEYWORD,router.com
 DOMAIN-KEYWORD,jimoying
 DOMAIN-KEYWORD,*jimoying*
@@ -25,16 +34,6 @@ DOMAIN-KEYWORD,netbian
 DOMAIN-KEYWORD,imgse.com
 DOMAIN-KEYWORD,oray
 DOMAIN-KEYWORD,sunlogin
-IP-CIDR,10.0.8.2/24,no-resolve
-IP-CIDR,43.156.38.195/24,no-resolve
-IP-CIDR,139.199.199.40/24,no-resolve
-IP-CIDR,223.5.5.5/8,no-resolve
-IP-CIDR,223.6.6.6/8,no-resolve
-IP-CIDR,8.8.8.8/8,no-resolve
-IP-CIDR,1.1.1.1/8,no-resolve
-IP-CIDR,114.114.114.114/8,no-resolve
-IP-CIDR,192.168.80.1/8,no-resolve
-IP-CIDR,192.168.4.1/8,no-resolve
 DOMAIN-KEYWORD,*dingtalk*
 DOMAIN-KEYWORD,dingtalk
 DOMAIN-KEYWORD,weixin
