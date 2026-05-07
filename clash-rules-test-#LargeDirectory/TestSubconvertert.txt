@@ -1,0 +1,46 @@
+
+#### 主要目的: 测试2-外部配置(外部配置如何抽离分流文件!!!!)
+---------------------------------------------
+aikeyun-hk
+https://sub.xeton.dev/sub?target=clash&new_name=true&url=https%3A%2F%2F47.236.146.61%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db7246782b97b6b38c8754dc6c463422f&insert=false&config=https://cf.buliang0.cf/clash-rules/nodnsleak.ini&include=%E9%A6%99%E6%B8%AF&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false#slbable
+http://localhost:25500/sub?target=clash&new_name=true&url=https%3A%2F%2F47.236.146.61%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db7246782b97b6b38c8754dc6c463422f&insert=false&config=https://cf.buliang0.cf/clash-rules/nodnsleak.ini&include=%E9%A6%99%E6%B8%AF&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false#slbable
+↓
+测试1-文件服务器(多媒体类型):
+https://github.com/jimoying/ACL4SS/blob/main/clash-rules/my-test/nodnsleak.ini
+\- config=https%3A%2F%2Fgithub.com%2Fjimoying%2FACL4SS%2Fblob%2Fmain%2Fclash-rules%2Fmy-test%2Fnodnsleak.ini
+http://192.168.81.183:8000/nodnsleak.ini
+\---- 无法使用,因为访问http返回的是'HTTP ERROR 404'							// 解决方式,win.webdav添加多媒体类型: .ini + text/plain
+\- config=http%3A%2F%2F192.168.81.183%3A8000%2Fnodnsleak.ini
+\---- 可以使用,因为访问http返回的是'nodnsleak.ini(Unix LF)(说明订阅后端是Unix编码,而非Windows编码!!!)'
+http://43.139.95.101:8000/webdav2/nodnsleak.ini
+\- config=http%3A%2F%2F43.139.95.101%3A8000%2Fwebdav2%2Fnodnsleak.ini
+
+http://localhost:25500/sub?target=clash&new_name=true&url=https%3A%2F%2F47.236.146.61%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db7246782b97b6b38c8754dc6c463422f&insert=false& config=http%3A%2F%2F192.168.81.183%3A8000%2Fnodnsleak.ini&include=%E9%A6%99%E6%B8%AF&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false#slbable
+http://localhost:25500/sub?target=clash&new_name=true&url=https%3A%2F%2F47.236.146.61%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db7246782b97b6b38c8754dc6c463422f&insert=false&config=http%3A%2F%2F43.139.95.101%3A8000%2Fwebdav2%2Fnodnsleak.ini&include=%E9%A6%99%E6%B8%AF&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false#slbable
+↓
+测试2-外部配置:
+http://127.0.0.1:25500/sub?target=clash&new_name=true&url=https%3A%2F%2F47.236.146.61%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db7246782b97b6b38c8754dc6c463422f&insert=false&config=http%3A%2F%2F192.168.81.183%3A8000%2Fnodnsleak.ini&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false
+
+
+
+####### release.环境:
+https://raw.githubusercontent.com/jimoying/ACL4SS/refs/heads/main/clash-rules/my-release/nodnsleak.ini
+\- config=https%3A%2F%2Fraw.githubusercontent.com%2Fjimoying%2FACL4SS%2Frefs%2Fheads%2Fmain%2Fclash-rules%2Fmy-release%2Fnodnsleak.ini
+↓
+http://127.0.0.1:25500/sub?target=clash&new_name=true&url=https%3A%2F%2F47.236.146.61%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Db7246782b97b6b38c8754dc6c463422f&insert=false&config=http%3A%2F%2F192.168.81.183%3A8000%2Fnodnsleak.ini&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false
+
+--------------------------------------------- 外部配置-自定义补充配置
+http://192.168.81.183:8000/nodnsleak.list
+\---- http%3A%2F%2F192.168.81.183%3A8000%2Fnodnsleak.list
+http://192.168.81.183:8000/CustomDirect.list
+\---- http%3A%2F%2F192.168.81.183%3A8000%2FCustomDirect.list
+
+语法:
+;http
+ruleset=♻️ github,http://192.168.81.183:8000/TestCustomDirect.list
+
+;未测试成功!!!
+;ruleset=♻️ github,./TestCustomDirect.list
+
+;未测试成功!!!
+;ruleset=!!import:snippets/rulesets.txt

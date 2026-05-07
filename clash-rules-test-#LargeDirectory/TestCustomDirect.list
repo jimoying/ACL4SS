@@ -3,7 +3,7 @@
 # ================================================================================================================================================================
 # 格式: 去掉"type类型", type类型由-外部配置来定义	**************************************************************************************************************
 # eg: IP-CIDR,10.0.8.2/24,[DIRECT],no-resolve ==转为==> IP-CIDR,10.0.8.2/24,no-resolve
-# eg: DOMAIN-KEYWORD,sakura,[DIRECT|REJECT] ==转为==> DOMAIN-KEYWORD,sakura
+# eg: DOMAIN-KEYWORD,sakura77,[DIRECT|REJECT] ==转为==> DOMAIN-KEYWORD,sakura77
 # eg: DOMAIN-KEYWORD,alipay,[DIRECT|REJECT] ==转为==> DOMAIN-KEYWORD,alipay
 # eg: DOMAIN,www.asusrouter.com,[DIRECT|REJECT] ==转为==> DOMAIN,www.asusrouter.com
 # eg: DOMAIN-SUFFIX,4399.com,[DIRECT|REJECT] ==转为==> DOMAIN-SUFFIX,4399.com
@@ -11,39 +11,13 @@
 # 直连列表
 
 # MyList
-IP-CIDR,10.0.8.2/24,no-resolve
-IP-CIDR,43.156.38.195/24,no-resolve
-IP-CIDR,139.199.199.40/24,no-resolve
-IP-CIDR,43.139.95.101/24,no-resolve
-IP-CIDR,223.5.5.5/8,no-resolve
-IP-CIDR,223.6.6.6/8,no-resolve
-IP-CIDR,8.8.8.8/8,no-resolve
-IP-CIDR,1.1.1.1/8,no-resolve
-IP-CIDR,114.114.114.114/8,no-resolve
 
-DOMAIN-KEYWORD,router.com
-DOMAIN-KEYWORD,jimoying
-DOMAIN-KEYWORD,*jimoying*
-DOMAIN-KEYWORD,jimoying77
-DOMAIN-KEYWORD,*jimoying*
-DOMAIN-KEYWORD,sakura7
-DOMAIN-KEYWORD,*sakura7*
-DOMAIN-KEYWORD,sakura77
-DOMAIN-KEYWORD,*sakura77*
-DOMAIN-KEYWORD,vm.*
-DOMAIN-KEYWORD,netbian
-DOMAIN-KEYWORD,imgse.com
-DOMAIN-KEYWORD,oray
-DOMAIN-KEYWORD,sunlogin
-DOMAIN-KEYWORD,*dingtalk*
-DOMAIN-KEYWORD,dingtalk
-DOMAIN-KEYWORD,weixin
-DOMAIN-KEYWORD,*weixin*
-DOMAIN-KEYWORD,tencent
-DOMAIN-KEYWORD,*tencent*
-DOMAIN-KEYWORD,baidu
-DOMAIN-KEYWORD,cn12315
-DOMAIN-KEYWORD,cn.bing.com
+# ============================================= 测试1
+DOMAIN-SUFFIX,4399.com
+
+# ============================================= 测试2
+DOMAIN-KEYWORD,GithubTest
+DOMAIN,GithubTest2
 
 # ============================================= 测试3
 DOMAIN-KEYWORD,GithubTest3,no-resolve

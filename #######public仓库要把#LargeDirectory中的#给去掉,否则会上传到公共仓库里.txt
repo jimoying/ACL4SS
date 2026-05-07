@@ -1,0 +1,12 @@
+#######public仓库要把#LargeDirectory中的#给去掉,否则会上传到公共仓库里!!!
+#######public仓库要把#LargeDirectory中的#给去掉,否则会上传到公共仓库里!!!
+#######public仓库要把#LargeDirectory中的#给去掉,否则会上传到公共仓库里!!!
+
+#### Public仓库
+````
+clash-rules-test-#LargeDirectory
+↓
+↓ 变为
+↓
+clash-rules-test-LargeDirectory
+````
